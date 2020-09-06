@@ -33,4 +33,4 @@ Strikethrough when complete
 
 **Add a menu icon in the top left** (like this: https://zhijiaprofessionalcontext.files.wordpress.com/2014/04/logotype17.jpg)
 - "About" option which pulls up a popup with a bit of about info
-- Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app, rate app, contact support, etc)
+- Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app (delete all data, gdpr), rate app, contact support, export all data (gdpr) etc)
