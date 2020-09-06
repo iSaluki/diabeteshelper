@@ -75,7 +75,7 @@ DatabaseProvider.db.getAllClients();
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text('ok'),
+              child: Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -163,7 +163,7 @@ DatabaseProvider.db.getAllClients();
                         Expanded(
                           child: Column(
                             children: [
-                              Text("Date Time",
+                              Text("Date & Time",
                               style: TextStyle(
                                 fontSize: 18,
                                   color: Colors.white
