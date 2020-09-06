@@ -10,6 +10,9 @@ Any questions about this project or the app that is built from it should be dire
 
 ## Todo
 
+Strikethrough when complete
+
+
 - Improve logbook:
 Show time as well as date
 Allow user to set a custom date and time (on new and edit)
