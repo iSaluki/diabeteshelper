@@ -1,0 +1,608 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "admob_flutter",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/admob_flutter-0.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "args",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/args-1.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "async",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/async-2.5.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "beauty_textfield",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/beauty_textfield-0.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "boolean_selector",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/boolean_selector-2.1.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "cached_network_image",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cached_network_image-2.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "carousel_pro",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/carousel_pro-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "characters",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/characters-1.1.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "charcode",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/charcode-1.2.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "clock",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/clock-1.1.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/collection-1.15.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/convert-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.17"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/crypto-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "csv",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/csv-4.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "cupertino_icons",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cupertino_icons-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "data_tables",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/data_tables-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "effective_dart",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/effective_dart-1.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "fake_async",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/fake_async-1.1.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/ffi-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/file-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "firebase",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase-7.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "firebase_analytics",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_analytics-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "firebase_analytics_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_analytics_platform_interface-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "firebase_analytics_web",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_analytics_web-0.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "firebase_core",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core_web-0.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "flare_dart",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flare_dart-2.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "flare_flutter",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flare_flutter-2.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter",
+      "rootUri": "file:///D:/FlutterSDK/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "flutter_blurhash",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_blurhash-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "flutter_cache_manager",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_cache_manager-1.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "flutter_spinkit",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_spinkit-4.1.2+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "flutter_test",
+      "rootUri": "file:///D:/FlutterSDK/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///D:/FlutterSDK/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_webview_plugin",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.3.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/fluttertoast-7.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/intl-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "io",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/io-0.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/js-0.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "json_rpc_2",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/json_rpc_2-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/logging-0.11.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "matcher",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/matcher-0.12.10-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/meta-1.3.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "nice_button",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/nice_button-0.1.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "octo_image",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/octo_image-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path-1.8.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider-1.6.14",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider_platform_interface-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pedantic-1.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/permission_handler-4.4.0+hotfix.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/permission_handler_platform_interface-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/platform-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.24"
+    },
+    {
+      "name": "platform_detect",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/platform_detect-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/process-3.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "process_run",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/process_run-0.10.12+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
+      "name": "pub_semver",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pub_semver-1.4.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "quiver",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/quiver-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/rxdart-0.24.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "shelf",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/shelf-0.7.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shelf_web_socket",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/shelf_web_socket-0.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "sky_engine",
+      "rootUri": "file:///D:/FlutterSDK/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "1.11"
+    },
+    {
+      "name": "slimy_card",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/slimy_card-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/source_span-1.8.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "sqflite",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/sqflite-1.3.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/sqflite_common-1.0.2+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_common_ffi",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/sqflite_common_ffi-1.1.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
+      "name": "sqflite_common_server",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_common_server",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_common_test",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite-d28248a3bfa4092ffa96775660cce48bcb70add7/sqflite_common_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_porter",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_porter",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_server",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_server",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_test",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqlite3",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/sqlite3-0.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
+      "name": "stack_trace",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "stream_channel",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/stream_channel-2.1.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/string_scanner-1.1.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/synchronized-2.2.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
+      "name": "tekartik_common_utils",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/common_utils.dart-dd7b3f0afb61f9c326c6897dce90b4f99c8505ca/",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
+      "name": "tekartik_web_socket",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/web_socket.dart-d3fe777a87a2facbca305e03c3914a2ce421856c/web_socket",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "tekartik_web_socket_io",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/web_socket.dart-d3fe777a87a2facbca305e03c3914a2ce421856c/web_socket_io",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/term_glyph-1.2.0-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "test_api",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/test_api-0.2.19-nullsafety",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/typed_data-1.3.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "url_launcher",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/url_launcher-5.5.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/url_launcher_linux-0.0.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+7",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/url_launcher_platform_interface-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/url_launcher_web-0.1.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "uuid",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/uuid-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "vector_math",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/vector_math-2.1.0-nullsafety.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "web_socket_channel",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/web_socket_channel-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "webview_flutter",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/webview_flutter-0.3.22+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/yaml-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "diabeteshelper",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    }
+  ],
+  "generated": "2020-09-05T14:10:57.101479Z",
+  "generator": "pub",
+  "generatorVersion": "2.10.0-7.2.beta"
+}
