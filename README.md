@@ -28,7 +28,9 @@ Strikethrough when complete
 **Search:**
 - Display some information by default instead of infinitely showing the loading icon, maybe just show a few random foods?
 - Allow the user to add their own custom foods and save this to a local database
+- Allow user to "Add to meal" foods after entering a weight and then calculate the total carbs of all items in the meal at once
+- Allow user to save a meal preset and then check or edit it at any time
 
 **Add a menu icon in the top left** (like this: https://zhijiaprofessionalcontext.files.wordpress.com/2014/04/logotype17.jpg)
 - "About" option which pulls up a popup with a bit of about info
-- Settings menu (Clear logbook, clear custom foods, clear exported files, etc)
+- Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app, rate app, contact support, etc)
