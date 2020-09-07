@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 class AddEdit extends StatefulWidget {
   final bool edit;
   final logmodel client;
-  logbook g = logbook();
+
   AddEdit(this.edit, {this.client})
   : assert(edit == true || client ==null);
 
@@ -106,7 +106,7 @@ class _AddEditState extends State<AddEdit> {
                         if (!_formKey.currentState.validate()){
 
                           setState(() {
-                           logbook();
+
                           });
                         }else if (widget.edit == true) {
 

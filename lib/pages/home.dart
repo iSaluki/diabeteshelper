@@ -27,15 +27,63 @@ class _homeState extends State<home> {
   @override
   void initState() {
     super.initState();
-    // TODO: Initialize _bannerAd
+    setState(() {
+      getdata();
+    });
 
     bannerSize = AdmobBannerSize.BANNER;
 
-    // TODO: Load a Banner Ad
+
 
   }
 
+getdata() async{
+  String url="";
+  if (textEditingController.text.isNotEmpty) {
+    setState(() {
+      _loading = true;
+    });
+    fooddata = new List();
 
+
+  url =
+        "https://api.edamam.com/api/food-database/v2/parser?ingr=${textEditingController.text}&app_id=fa4127dc&app_key=106896ea69b315214411d6bdefbf21d6";
+
+  }
+  else if(textEditingController.text.isEmpty){
+    setState(() {
+      _loading = true;
+    });
+    fooddata = new List();
+
+
+     url =
+        "https://api.edamam.com/api/food-database/v2/parser?ingr=green-apple&app_id=fa4127dc&app_key=106896ea69b315214411d6bdefbf21d6";
+
+  }
+  else {
+    print("not doing it");
+  }
+  var response = await http.get(url);
+
+  Map<String, dynamic> jsonData =
+  jsonDecode(response.body);
+//                                print("this is json Data $jsonData");
+  jsonData["hints"].forEach((element) {
+//                                  print(element.toString());
+    foodmodel foodModel = new foodmodel();
+    foodModel =  foodmodel.fromMap(element['food']);
+
+    fooddata.add(foodModel);
+    print(foodModel.image);
+  });
+  setState(() {
+    _loading = false;
+  });
+
+  print("doing it");
+  print(url);
+}
 
   @override
   Widget build(BuildContext context) {
@@ -117,37 +165,7 @@ class _homeState extends State<home> {
                         ),
                         InkWell(
                             onTap: () async {
-                              if (textEditingController.text.isNotEmpty) {
-                                setState(() {
-                                  _loading = true;
-                                });
-                                fooddata = new List();
-
-
-                                String url =
-                                    "https://api.edamam.com/api/food-database/v2/parser?nutrition-type=logging&ingr=${textEditingController.text}&app_id=fa4127dc&app_key=106896ea69b315214411d6bdefbf21d6";
-                                var response = await http.get(url);
-
-                                Map<String, dynamic> jsonData =
-                                jsonDecode(response.body);
-//                                print("this is json Data $jsonData");
-                                jsonData["parsed"].forEach((element) {
-//                                  print(element.toString());
-                                  foodmodel foodModel = new foodmodel();
-                                  foodModel =  foodmodel.fromMap(element['food']);
-
-                                  fooddata.add(foodModel);
-                                  print(foodModel.image);
-                                });
-                                setState(() {
-                                  _loading = false;
-                                });
-
-                                print("doing it");
-                                print(url);
-                              } else {
-                                print("not doing it");
-                              }
+                              getdata();
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -193,7 +211,7 @@ class _homeState extends State<home> {
                             GridTile(
                                 child: FoodTile(
                                   title: fooddata[index].label,
-                                  imgUrl: fooddata[index].image,
+                                  imgUrl: fooddata[index].image==null?"":fooddata[index].image,
                                   desc: fooddata[index].source,
 
                                   carbs: fooddata[index].nutrient,

@@ -1,5 +1,5 @@
 import 'package:diabeteshelper/Widget/applogo.dart';
-
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:diabeteshelper/database/database.dart';
 import 'package:diabeteshelper/models/logbookmodel.dart';
 import 'package:admob_flutter/admob_flutter.dart';
@@ -8,22 +8,24 @@ import 'package:permission_handler/permission_handler.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:sqflite/sqlite_api.dart';
-import 'package:data_tables/data_tables.dart';
 
 
 class logbook extends StatefulWidget {
+
   @override
   _logbookState createState() => _logbookState();
 }
 
 
 class _logbookState extends State<logbook> {
-  static Database _db;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var dbName = "client.db";
   var path, dbPath, dir;
   AdmobBannerSize bannerSize;
+
+
+
   @override
   void didUpdateWidget(logbook oldWidget) {
 
@@ -32,7 +34,16 @@ class _logbookState extends State<logbook> {
     });
   }
 
+  TextEditingController activtyEditingController = TextEditingController();
+  TextEditingController insulinEditingController = TextEditingController();
+  TextEditingController bgEditingController = TextEditingController();
+  TextEditingController carbsEditingController = TextEditingController();
+  TextEditingController notesEditingController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+   bool edit=false;
+String ins,ca,bg,no,ac;
 
+logmodel clint;
   @override
   void initState() {
 
@@ -243,21 +254,62 @@ DatabaseProvider.db.getAllClients();
                           //all the records that are in the client table are passed to an item Client item = snapshot.data [index];
                           itemBuilder: (BuildContext context, int index){
                             logmodel item = snapshot.data[index];
+
                             //delete one register for id
                             return InkWell(
                               onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => AddEdit(
-                                      true,
-                                      //Here is the record that we want to edit
-                                      client: item,
-                                    )
+                                print("ye data"+snapshot.data[index].activity);
+                                  Alert(
+                                      context: context,
+                                      title: "Enter logs",
+                                      content: Form(
+                                        key: _formKey,
+                                        child: Column(
+                                          children: <Widget>[
+                                            textFormactivity(activtyEditingController, snapshot.data[index].activity, "activity",
+                                                Icons.local_activity, snapshot.data[index].activity ),
+                                            textFormFieldinsulin(insulinEditingController, snapshot.data[index].insulin, "insulin",
+                                              Icons.category, snapshot.data[index].insulin),
+                                            textFormFieldcarbs(carbsEditingController, snapshot.data[index].carbs, "carbs",
+                                              Icons.fastfood, snapshot.data[index].carbs,),
+                                            textFormFieldbg(bgEditingController, snapshot.data[index].bglocouse, "bg",
+                                              Icons.battery_alert, snapshot.data[index].bglocouse),
+                                            textFormFieldnotes(notesEditingController, snapshot.data[index].notes, "notes",
+                                              Icons.note,snapshot.data[index].notes),
+                                          ],
+                                        ),
+                                      ),
+                                      buttons: [
+                                        DialogButton(
 
-                                )
-                                );
-                                setState(() {
+                                          onPressed: () async {
+                                            print(snapshot.data[index].activity+ "--------------" + activtyEditingController.text);
+                                            DatabaseProvider.db.updateClient(new logmodel(
+                                                activity: activtyEditingController.text.length==0?snapshot.data[index].activity:activtyEditingController.text,
+                                                bglocouse: bgEditingController.text.length==0?snapshot.data[index].bglocouse: bgEditingController.text,
+                                                carbs: carbsEditingController.text.length==0?snapshot.data[index].carbs:carbsEditingController.text,
+                                                dtetime: DateTime.now().toString(),
+                                                insulin: insulinEditingController.text.length==0?snapshot.data[index].insulin:insulinEditingController.text,
+                                                id: item.id,
+                                                notes: notesEditingController.text.length==0?snapshot.data[index].notes:notesEditingController.text
+                                            ));
+                                            setState(() {
+                                              _formKey.currentState.reset();
+                                              Navigator.pop(context);
+                                              setState(() {
 
-                                });
+                                              });
+                                            });
+                                          },
+                                          color: Colors.green,
+                                          child: Text(
+                                            "Save",
+                                            style: TextStyle(color: Colors.white, fontSize: 20),
+                                          ),
+                                        )
+                                      ]).show();
+
+
                               },
                               onLongPress: (){
                                 DatabaseProvider.db.deleteClientWithId(item.id);
@@ -287,7 +339,7 @@ DatabaseProvider.db.getAllClients();
                                     Expanded(
                                       child: Column(
                                         children: [
-                                          Text("Date: "+item.dtetime.toString().substring(0,10),
+                                          Text(item.dtetime.toString().substring(0,19),
                                             style: TextStyle(
                                                 color: Colors.white
                                             ),)
@@ -401,16 +453,186 @@ DatabaseProvider.db.getAllClients();
         child: Icon(Icons.add),
         backgroundColor: Colors.green,
         onPressed: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => AddEdit(false)));
-          setState(() {
 
-          });
+          Alert(
+              context: context,
+              title: "Enter log",
+              content: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    textFormactivity(activtyEditingController, "activity", "activity",
+                        Icons.local_activity, "activity"),
+                    textFormFieldinsulin(insulinEditingController, "insulin", "insulin",
+                      Icons.category,  "insulin",),
+                    textFormFieldcarbs(carbsEditingController, "carbs", "carbs",
+                      Icons.fastfood,"carbs",),
+                    textFormFieldbg(bgEditingController, "bg", "bg",
+                      Icons.battery_alert,   "bg",),
+                    textFormFieldnotes(notesEditingController, "notes", "notes",
+                      Icons.note, "notes",),
+                  ],
+                ),
+              ),
+              buttons: [
+                DialogButton(
+                  onPressed: () async {
+
+                      await DatabaseProvider.db.addClientToDatabase(new logmodel(
+                          activity: activtyEditingController.text,
+                          bglocouse: bgEditingController.text,
+                          carbs: carbsEditingController.text,
+                          dtetime: DateTime.now().toString(),
+                          insulin: insulinEditingController.text,
+                          notes: notesEditingController.text
+                      ));
+                      setState(() {
+                        _formKey.currentState.reset();
+                        Navigator.pop(context);
+                        setState(() {
+
+                        });
+                      });
+
+                  },
+                  color: Colors.green,
+                  child: Text(
+                    "Save",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                )
+              ]).show();
         },
       ),
 
     );
   }
 }
+
+
+textFormactivity(TextEditingController t, String label, String hint,
+    IconData iconData, String initialValue) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+    ),
+    child: TextFormField(
+
+//          validator: (value){
+//            if (value.isEmpty) {
+//              return 'Please enter some text';
+//            }
+//          },
+      controller: t,
+      //keyboardType: TextInputType.number,
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: label,
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(10))
+      ),
+    ),
+  );
+}
+
+textFormFieldinsulin(TextEditingController t, String label, String hint,
+    IconData iconData, String initialValue) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+
+    ),
+    child: TextFormField(
+//          validator: (value){
+//            if (value.isEmpty) {
+//              return 'Please enter some text';
+//            }
+//          },
+      controller: t,
+      keyboardType: TextInputType.number,
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: label,
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(10))
+      ),
+    ),
+  );
+}
+textFormFieldbg(TextEditingController t, String label, String hint,
+    IconData iconData, String initialValue) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+    ),
+    child: TextFormField(
+//        validator: (value){
+//          if (value.isEmpty) {
+//            return 'Please enter some text';
+//          }
+//        },
+      controller: t,
+      keyboardType: TextInputType.number,
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: label,
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(10))
+      ),
+    ),
+  );
+}
+textFormFieldcarbs(TextEditingController t, String label, String hint,
+    IconData iconData, String initialValue) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+    ),
+    child: TextFormField(
+//        validator: (value){
+//          if (value.isEmpty) {
+//            return 'Please enter some text';
+//          }
+//        },
+      controller: t,
+      keyboardType: TextInputType.number,
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: label,
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(10))
+      ),
+    ),
+  );
+}
+textFormFieldnotes(TextEditingController t, String label, String hint,
+    IconData iconData, String initialValue) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+    ),
+    child: TextFormField(
+//        validator: (value){
+//          if (value.isEmpty) {
+//            return 'Please enter some text';
+//          }
+//        },
+      controller: t,
+      keyboardType: TextInputType.text,
+      textCapitalization: TextCapitalization.words,
+      decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: label,
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(10))
+      ),
+    ),
+  );
+}
+
 
 
