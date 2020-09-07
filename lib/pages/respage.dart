@@ -181,7 +181,7 @@ class _insulincalState extends State<insulincal> {
                               //padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                               child: Center(
                                   child: Text(
-                                    'Global Diabetes community ',
+                                    'Diabetes community ',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
