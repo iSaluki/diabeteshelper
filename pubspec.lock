@@ -372,7 +372,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.9.2"
   permission_handler:
     dependency: "direct main"
     description:
@@ -436,6 +436,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
+  rflutter_alert:
+    dependency: "direct main"
+    description:
+      name: rflutter_alert
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   rxdart:
     dependency: transitive
     description:
@@ -502,7 +509,7 @@ packages:
     description:
       path: sqflite_common_server
       ref: dart2
-      resolved-ref: "36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3"
+      resolved-ref: fb2809238438124cad4729bd84422a2f30d0ca48
       url: "git://github.com/tekartik/sqflite_more"
     source: git
     version: "0.3.3"
@@ -520,7 +527,7 @@ packages:
     description:
       path: sqflite_porter
       ref: dart2
-      resolved-ref: "36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3"
+      resolved-ref: fb2809238438124cad4729bd84422a2f30d0ca48
       url: "git://github.com/tekartik/sqflite_more"
     source: git
     version: "0.2.0+1"
@@ -529,7 +536,7 @@ packages:
     description:
       path: sqflite_server
       ref: dart2
-      resolved-ref: "36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3"
+      resolved-ref: fb2809238438124cad4729bd84422a2f30d0ca48
       url: "git://github.com/tekartik/sqflite_more"
     source: git
     version: "0.3.3"
@@ -538,7 +545,7 @@ packages:
     description:
       path: sqflite_test
       ref: dart2
-      resolved-ref: "36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3"
+      resolved-ref: fb2809238438124cad4729bd84422a2f30d0ca48
       url: "git://github.com/tekartik/sqflite_more"
     source: git
     version: "0.2.4"
@@ -582,10 +589,10 @@ packages:
     description:
       path: "."
       ref: dart2
-      resolved-ref: dd7b3f0afb61f9c326c6897dce90b4f99c8505ca
+      resolved-ref: "2a62487739c2108367dd4daeca5788a2dda11fd5"
       url: "git://github.com/tekartik/common_utils.dart"
     source: git
-    version: "0.10.13"
+    version: "0.10.14"
   tekartik_web_socket:
     dependency: transitive
     description:
@@ -694,7 +701,7 @@ packages:
       name: xdg_directories
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.2"
   yaml:
     dependency: transitive
     description:

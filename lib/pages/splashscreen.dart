@@ -101,7 +101,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
                                 Spacer(),
-                                Text(_versionName),
+                                Text("V1.1"),
                                 Spacer(
                                   flex: 4,
                                 ),

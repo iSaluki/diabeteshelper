@@ -321,7 +321,7 @@
     },
     {
       "name": "pedantic",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pedantic-1.9.0",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pedantic-1.9.2",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -376,6 +376,12 @@
     {
       "name": "quiver",
       "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/quiver-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "rflutter_alert",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/rflutter_alert-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -435,7 +441,7 @@
     },
     {
       "name": "sqflite_common_server",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_common_server",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-fb2809238438124cad4729bd84422a2f30d0ca48/sqflite_common_server",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -447,19 +453,19 @@
     },
     {
       "name": "sqflite_porter",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_porter",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-fb2809238438124cad4729bd84422a2f30d0ca48/sqflite_porter",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
     {
       "name": "sqflite_server",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_server",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-fb2809238438124cad4729bd84422a2f30d0ca48/sqflite_server",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
     {
       "name": "sqflite_test",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-36822c77ef6f0fd2c4eb8b4b5a22be074aaa62e3/sqflite_test",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/sqflite_more-fb2809238438124cad4729bd84422a2f30d0ca48/sqflite_test",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -495,7 +501,7 @@
     },
     {
       "name": "tekartik_common_utils",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/common_utils.dart-dd7b3f0afb61f9c326c6897dce90b4f99c8505ca/",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/git/common_utils.dart-2a62487739c2108367dd4daeca5788a2dda11fd5/",
       "packageUri": "lib/",
       "languageVersion": "2.8"
     },
@@ -585,7 +591,7 @@
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.1.0",
+      "rootUri": "file:///C:/Users/coinl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.3"
     },
@@ -602,7 +608,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-09-06T14:13:09.383738Z",
+  "generated": "2020-09-07T17:32:05.148723Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-7.2.beta"
 }
