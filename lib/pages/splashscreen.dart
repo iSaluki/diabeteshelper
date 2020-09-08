@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  String _versionName = 'V1.0';
+  String _versionName = 'V1.2';
   final splashDelay = 5;
 
   @override
@@ -101,7 +101,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
                                 Spacer(),
-                                Text("V1.1"),
+                                Text(_versionName),
                                 Spacer(
                                   flex: 4,
                                 ),

@@ -2,7 +2,8 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:diabeteshelper/models/logbookmodel.dart';
-
+import 'package:flutter/services.dart';
+import 'package:wc_flutter_share/wc_flutter_share.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -25,7 +26,7 @@ class DatabaseProvider{
 
   Future<Database> getDatabaseInstanace() async {
     Directory directory = await getApplicationDocumentsDirectory();
-    String path = join(directory.path, "sdata.db");
+    String path = join(directory.path, "ppdata.db");
     return await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
           await db.execute("CREATE TABLE Client ("
@@ -51,12 +52,15 @@ class DatabaseProvider{
     var csv = mapListToCsv(result);
     print(csv);
 
-String nd = DateTime.now().toString();
-    String dbPath = join(path, "${nd}report.csv");
+
+    String dbPath = join(path, "report.csv");
 
     final File file = File(dbPath);
     await file.writeAsString(csv);
-    print(dbPath);
+
+
+
+
     return dbPath;
 
   }
@@ -77,7 +81,26 @@ String nd = DateTime.now().toString();
     var response = await db.query("Client", where: "id = ?", whereArgs: [id]);
     return response.isNotEmpty ? logmodel.fromMap(response.first) : null;
   }
+  Future<List<logmodel>>search(String wheredata,String searchdata) async {
+    final db = await database;
+    print(wheredata+"========"+searchdata);
+    if(searchdata==""|| wheredata=="") {
+      var response = await db.query("Client");
+      List<logmodel> list = response.map((c) => logmodel.fromMap(c)).toList();
+      return list;
+    }
+    else{
 
+      var response = await db.query("Client", where: wheredata+" = ?", whereArgs: [searchdata]);
+
+      print(response.toString()+"^^^^^^^^^^^^");
+      List<logmodel> list = response.map((c) => logmodel.fromMap(c)).toList();
+      print(list.toString()+"^^^^^^^^^^^^");
+      return list;
+    }
+
+
+  }
 
   addClientToDatabase(logmodel client) async {
     final db = await database;

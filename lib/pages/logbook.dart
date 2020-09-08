@@ -1,13 +1,19 @@
+import 'dart:io';
+
 import 'package:diabeteshelper/Widget/applogo.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
+import 'package:dropdownfield/dropdownfield.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:diabeteshelper/database/database.dart';
 import 'package:diabeteshelper/models/logbookmodel.dart';
 import 'package:admob_flutter/admob_flutter.dart';
-import 'package:diabeteshelper/pages/add_editclient.dart';
+
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share_extend/share_extend.dart';
 
 import 'package:flutter/material.dart';
-
+import 'package:date_time_picker/date_time_picker.dart';
 
 
 class logbook extends StatefulWidget {
@@ -41,7 +47,8 @@ class _logbookState extends State<logbook> {
   TextEditingController notesEditingController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
    bool edit=false;
-String ins,ca,bg,no,ac;
+String ac="";
+String t =DateTime.now().toString();
 
 logmodel clint;
   @override
@@ -97,7 +104,9 @@ DatabaseProvider.db.getAllClients();
     );
   }
 
-
+  List<String> activit = [
+    "Breakfast", "Lunch", "Dinner", "Walking", "Cycling"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -108,13 +117,14 @@ DatabaseProvider.db.getAllClients();
           RaisedButton(
             color: Colors.white,
             onPressed: (){
-              DatabaseProvider.db.excel().then((value){
-                Scaffold.of(context).showSnackBar(SnackBar(
-                  content: Text("saved in "+value),
-                ));
+
+              DatabaseProvider.db.excel().then((value) async {
+
+                ShareExtend.share(value, "report");
+
+
               });
-              setState(() {
-              });
+
             },
             child: Text('Export Data',
                 style: new TextStyle(
@@ -159,11 +169,14 @@ DatabaseProvider.db.getAllClients();
                         colors: [Colors.green[900], Colors.black45],
 
                       ),
+                      borderRadius: BorderRadius.circular(10),
                       border: Border.all(
+                          color: Colors.white,
+                          width: 1.0,
 
-                          width: 2.0,
                           style: BorderStyle.solid
                       ),
+                      
 
                     ),
                     child: Row(
@@ -171,6 +184,8 @@ DatabaseProvider.db.getAllClients();
                       mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
+
+                      Container(),
                         Expanded(
                           child: Column(
                             children: [
@@ -243,7 +258,7 @@ DatabaseProvider.db.getAllClients();
                         SizedBox(height: 10,),
                   FutureBuilder<List<logmodel>>(
                     //we call the method, which is in the folder db file database.dart
-                    future: DatabaseProvider.db.getAllClients(),
+                    future: DatabaseProvider.db.search("carbs", "2"),
                     builder: (BuildContext context, AsyncSnapshot<List<logmodel>> snapshot) {
                       if (snapshot.hasData) {
                         return ListView.builder(
@@ -266,8 +281,46 @@ DatabaseProvider.db.getAllClients();
                                         key: _formKey,
                                         child: Column(
                                           children: <Widget>[
-                                            textFormactivity(activtyEditingController, snapshot.data[index].activity, "activity",
-                                                Icons.local_activity, snapshot.data[index].activity ),
+                                            DropDownField(
+                                                value:  snapshot.data[index].activity,
+                                                icon: Icon(Icons.local_activity),
+                                                required: false,
+                                                hintText: 'Choose a activity',
+                                                labelText: 'Activity',
+                                                items: activit,
+                                                strict: false,
+                                                onValueChanged: (dynamic newValue) {
+
+                                                  ac=newValue  ;
+
+
+
+                                                }),
+                                            DateTimePicker(
+                                                type: DateTimePickerType.dateTime,
+                                                dateMask: 'd MMM, yyyy',
+                                                initialValue:snapshot.data[index].dtetime,
+                                                firstDate: DateTime(2000),
+                                                lastDate: DateTime(2100),
+                                                icon: Icon(Icons.event),
+                                                dateLabelText: 'Date',
+                                                timeLabelText: "Hour",
+                                                selectableDayPredicate: (date) {
+
+                                                  return true;
+                                                },
+
+                                                onChanged: (val) {
+                                                  t=val;
+                                                },
+                                                validator: (val) {
+                                                  print(val);
+                                                  t=val;
+                                                },
+
+                                                onSaved: (val) {
+                                                  t=val;
+                                                }),
                                             textFormFieldinsulin(insulinEditingController, snapshot.data[index].insulin, "insulin",
                                               Icons.category, snapshot.data[index].insulin),
                                             textFormFieldcarbs(carbsEditingController, snapshot.data[index].carbs, "carbs",
@@ -285,7 +338,7 @@ DatabaseProvider.db.getAllClients();
                                           onPressed: () async {
                                             print(snapshot.data[index].activity+ "--------------" + activtyEditingController.text);
                                             DatabaseProvider.db.updateClient(new logmodel(
-                                                activity: activtyEditingController.text.length==0?snapshot.data[index].activity:activtyEditingController.text,
+                                                activity: ac==""?snapshot.data[index].activity:ac.toString(),
                                                 bglocouse: bgEditingController.text.length==0?snapshot.data[index].bglocouse: bgEditingController.text,
                                                 carbs: carbsEditingController.text.length==0?snapshot.data[index].carbs:carbsEditingController.text,
                                                 dtetime: DateTime.now().toString(),
@@ -324,9 +377,10 @@ DatabaseProvider.db.getAllClients();
                                     colors: [Colors.green[900], Colors.black45],
 
                                   ),
+                                  borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
-
-                                      width: 2.0,
+                                        color: Colors.white,
+                                      width: 1.0,
                                       style: BorderStyle.solid
                                   ),
 
@@ -339,7 +393,7 @@ DatabaseProvider.db.getAllClients();
                                     Expanded(
                                       child: Column(
                                         children: [
-                                          Text(item.dtetime.toString().substring(0,19),
+                                          Text(item.dtetime.toString(),
                                             style: TextStyle(
                                                 color: Colors.white
                                             ),)
@@ -461,8 +515,51 @@ DatabaseProvider.db.getAllClients();
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
-                    textFormactivity(activtyEditingController, "activity", "activity",
-                        Icons.local_activity, "activity"),
+
+                    DropDownField(
+                        value:  ac.toString(),
+                        icon: Icon(Icons.local_activity),
+                        required: false,
+                        hintText: 'Choose a activity',
+                        labelText: 'Activity',
+                        items: activit,
+                        strict: false,
+                        onValueChanged: (dynamic newValue) {
+
+                          ac=newValue  ;
+
+
+
+                        }),
+
+            DateTimePicker(
+              type: DateTimePickerType.dateTime,
+              dateMask: 'd MMM, yyyy',
+              initialValue: DateTime.now().toString(),
+              firstDate: DateTime(2000),
+              lastDate: DateTime(2100),
+              icon: Icon(Icons.event),
+              dateLabelText: 'Date',
+              timeLabelText: "Hour",
+              selectableDayPredicate: (date) {
+
+                return true;
+              },
+
+              onChanged: (val) {
+                t=val;
+              },
+              validator: (val) {
+                print(val);
+                t=val;
+              },
+
+              onSaved: (val) {
+                t=val;
+              }),
+
+                    // textFormactivity(activtyEditingController, "activity", "activity",
+                    //     Icons.local_activity, "activity"),
                     textFormFieldinsulin(insulinEditingController, "insulin", "insulin",
                       Icons.category,  "insulin",),
                     textFormFieldcarbs(carbsEditingController, "carbs", "carbs",
@@ -479,12 +576,13 @@ DatabaseProvider.db.getAllClients();
                   onPressed: () async {
 
                       await DatabaseProvider.db.addClientToDatabase(new logmodel(
-                          activity: activtyEditingController.text,
+                          activity: ac.toString(),
                           bglocouse: bgEditingController.text,
                           carbs: carbsEditingController.text,
-                          dtetime: DateTime.now().toString(),
+                          dtetime: t.toString(),
                           insulin: insulinEditingController.text,
                           notes: notesEditingController.text
+
                       ));
                       setState(() {
                         _formKey.currentState.reset();
@@ -561,6 +659,7 @@ textFormFieldinsulin(TextEditingController t, String label, String hint,
     ),
   );
 }
+
 textFormFieldbg(TextEditingController t, String label, String hint,
     IconData iconData, String initialValue) {
   return Padding(
@@ -633,6 +732,4 @@ textFormFieldnotes(TextEditingController t, String label, String hint,
     ),
   );
 }
-
-
 
