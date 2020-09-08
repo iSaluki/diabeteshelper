@@ -31,7 +31,26 @@ Strikethrough when complete
 - Allow the user to add their own custom foods and save this to a local database
 - Allow user to "Add to meal" foods after entering a weight and then calculate the total carbs of all items in the meal at once
 - Allow user to save a meal preset and then check or edit it at any time
+- A button for users to calculate insulin quickly on any food or meal, they just hit the meal, choose the preset (see Insulin Calculator) and then it will say how much insulin they need. If it is not a meal, then get them to specify the weight of the product and then calculate the carbs and insulin dose at the same time.
+- If possible, automatically enter an average portion size weight of each food when you choose a food on the search.
 
 **Add a menu icon in the top left** (like this: https://zhijiaprofessionalcontext.files.wordpress.com/2014/04/logotype17.jpg)
 - "About" option which pulls up a popup with a bit of about info
 - Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app (delete all data, gdpr), rate app, contact support, export all data (gdpr), import data etc)
+
+**Insulin Calculator:**
+- Get users to configure their settings on first use
+- Allow users to change their settings in the settings menu
+- Users can select their preset (eg, Breakfast, Lunch, Dinner, Snack) and then enter their carb intake, the system will output how many units they need.
+- After calculating insulin, give an option to add to the logbook straight away. Make this work for meals and foods as well.
+
+What settings do users need to set?:
+
+Insulin to carb ratios for each preset they create,
+
+So an example would be 1:15 (1 unit for every 15 grams of carbs they consume).
+This may be different for different meals and activities, so let users set their own presets and define the ratios for it.
+
+For calculating insulin:
+
+Take carbs and divide by ratio equals units of insulin.
