@@ -21,6 +21,7 @@ Strikethrough when complete
 - <strike>Improve the entry creation system (activity will have a dropdown, with options like "Breakfast", "Lunch", "Dinner", "Walking", "Cycling" and a custom one)</strike>
 - <strike>Improve the data export system (after exporting the file, give the user an option to share it)</strike>
 - Improve the UI for the logbook
+- Add a ketone value (let the user specify their ketone level, this is a number)
 
 **New API:**
 - <strike>Use the new spoonacular API (may switch again if it doesn't work out), looking for a good API with lots of food types and meals.</strike>
