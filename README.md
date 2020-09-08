@@ -16,7 +16,7 @@ Strikethrough when complete
 **Improve logbook:**
 - <strike>Show time as well as date</strike> 
 - <strike> Allow user to set a custom date and time (on new and edit)</strike>
-- Let users search entries and sort by certain fields
+- <strike>Let users search entries and sort by certain fields</strike>
 - <strike>Refresh entries when a new one is created (to make it appear straight away)</strike>
 - <strike>Improve the entry creation system (activity will have a dropdown, with options like "Breakfast", "Lunch", "Dinner", "Walking", "Cycling" and a custom one)</strike>
 - <strike>Improve the data export system (after exporting the file, give the user an option to share it)</strike>
