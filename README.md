@@ -30,16 +30,16 @@ Strikethrough when complete
 - <strike>Display some information by default instead of infinitely showing the loading icon, maybe just show a few random foods?</strike>
 - <strike>Allow the user to add their own custom foods and save this to a local database<s/trike>
 - <strike>Allow user to "Add to meal" foods after entering a weight and then calculate the total carbs of all items in the meal at once</strike>
-- <strike>Allow user to save a meal preset and then check or edit it at any time<strike>
+- <strike>Allow user to save a meal preset and then check or edit it at any time</strike>
 - A button for users to calculate insulin quickly on any food or meal, they just hit the meal, choose the preset (see Insulin Calculator) and then it will say how much insulin they need. If it is not a meal, then get them to specify the weight of the product and then calculate the carbs and insulin dose at the same time.
 - If possible, automatically enter an average portion size weight of each food when you choose a food on the search.
-- Add a placeholder image to be displayed if there is no image for the food item. Make sure this image does not obviously contain any foods, so maybe something like an empty trolley.
-- Add a "No results found" page instead of loading infinitely.
+- <strike>Add a placeholder image to be displayed if there is no image for the food item. Make sure this image does not obviously contain any foods, so maybe something like an</strike><strike> empty trolley.</strike>
+- <strike>Add a "No results found" page instead of loading infinitely.</strike>
 - Have a set of 10-15 default foods that display when you visit the search page, instead of just apples. Saluki can provide these, message him.
 
 **Add a menu icon in the top left** (like this: https://zhijiaprofessionalcontext.files.wordpress.com/2014/04/logotype17.jpg)
 - <strike>"About" option which pulls up a popup with a bit of about info</strike>
-- <strike>Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app (delete all data, gdpr), rate app, contact support, export all data (gdpr), import data etc)</strike>
+- <strike>Settings menu (Clear logbook, clear custom foods, clear exported files, clear meals, reset app (delete all data, gdpr), rate app, contact support, export all data</strike> <strike>(gdpr), import data etc)</strike>
 
 **Insulin Calculator:**
 - Get users to configure their settings on first use
