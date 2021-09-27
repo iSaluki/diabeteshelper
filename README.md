@@ -4,4 +4,4 @@ An intuitive app to help users manage their diabetes, developed in Android Studi
 
 ## Information
 
-This project was setup by [Saluki](github.com/iSaluki) and is now going GPL to make it free and open for anyone.
+This project was setup by [Saluki](https://github.com/iSaluki) and is now going GPL to make it free and open for anyone.
