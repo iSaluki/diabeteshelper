@@ -4,6 +4,4 @@ An intuitive app to help users manage their diabetes, developed in Android Studi
 
 ## Information
 
-This project is owned and published by Saluki Corporation. Please see the license file for further details about usage permissions.
-
-Any questions about this project or the app that is built from it should be directed to support@salukicorporation.com or relayed to our Discord support team. (See salukicorporation.com for further details).
+This project was setup by [Saluki](github.com/iSaluki) and is now going GPL to make it free and open for anyone.
