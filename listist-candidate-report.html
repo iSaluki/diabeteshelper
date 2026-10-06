@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listist candidate report: diabeteshelper</title>
+<style>
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2230; --muted: #5b6577; --rule: #dde1e8;
+  --accent: #2d5bd7; --accent-soft: #e6ecfb; --warn: #a35a00; --warn-soft: #fbefdc;
+  --bad: #b3261e; --bad-soft: #fbe6e4; --good: #1d7a46; --good-soft: #e3f3ea; --code-bg: #eef1f6;
+  --display: "Bricolage Grotesque", "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11151c; --surface: #181e27; --fg: #e3e7ee; --muted: #9aa4b5; --rule: #2a3240;
+    --accent: #7ea2ff; --accent-soft: #1e2a45; --warn: #f0b35c; --warn-soft: #3a2b14;
+    --bad: #ff8a80; --bad-soft: #3d1c1a; --good: #6fd39b; --good-soft: #15301f; --code-bg: #212938;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15.5px; line-height: 1.6; margin: 0; padding: 40px 16px 72px; }
+.wrap { max-width: 920px; margin: 0 auto; display: grid; gap: 44px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-size: clamp(30px, 5vw, 44px); line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font-family: var(--display); font-size: 24px; line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+h3 { font-size: 16px; margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.lede { font-size: 17.5px; }
+.muted { color: var(--muted); }
+section { display: grid; gap: 16px; }
+code, .id { font-family: var(--mono); font-size: .86em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.pin { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+ul.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 72ch; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; display: grid; gap: 2px; }
+.stat b { font-family: var(--display); font-size: 30px; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 13.5px; line-height: 1.35; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.rule { border-top: 2px solid var(--accent); padding-top: 10px; display: grid; gap: 4px; min-width: 0; }
+.rule p { font-size: 14.5px; color: var(--muted); }
+.table-frame { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.chip.good { background: var(--good-soft); color: var(--good); }
+.chip.accent { background: var(--accent-soft); color: var(--accent); }
+.opps { display: grid; gap: 14px; }
+.opp { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 10px; }
+.opp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.opp-head h3 { font-size: 18px; font-family: var(--display); }
+.opp .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.opp .grid2 > div { min-width: 0; display: grid; gap: 4px; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 14px 16px; border-radius: 0 8px 8px 0; display: grid; gap: 6px; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--rule); padding-top: 14px; display: grid; gap: 6px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">diabeteshelper · evaluation · 2026-10-06 · commit 16173e1 · no code changed</div>
+    <h1>A small app with one real option list: the logbook "activity". Listist would help a little here, not a lot.</h1>
+    <p class="lede">The repository is a single-screen-stack Flutter app (about 2,300 lines of Dart in <code>lib/</code>) with one local SQLite table and no backend, API contract, migrations, i18n or agents. I found 5 closed or implied vocabularies. Only one of them, the logbook activity list (<code>Breakfast, Lunch, Dinner, Walking, Cycling</code>), is used across 3 layers: the picker, free-text storage and the CSV export. Its copies disagree in one verified way: the picker suggests five values, but every entry path stores any free text, and the stored value is the display label. No live bug comes from drift. I did find one unrelated live bug: the logbook only lists entries whose carbs value is exactly <code>"2"</code>. The most useful place for Listist is the activity list, plus a units list if blood-glucose units are ever made explicit.</p>
+    <p class="muted">Sources: the Listist skill and handbook (<code>/api/v1/begin</code>), both fetched live on 2026-10-06. I read every Dart file under <code>lib/</code>, plus <code>pubspec.yaml</code>, <code>README.md</code>, the iOS <code>Info.plist</code>, the CI workflow and the git history (<code>git log -S</code>). I ran the grep patterns from the skill's search reference for each layer.</p>
+  </header>
+
+  <section>
+    <h2>Listist in this codebase's terms</h2>
+    <div class="rules">
+      <div class="rule"><h3>Keep each list once</h3><p>The activity list is written once in code, at <code>lib/pages/logbook.dart:107</code>. It was also restated in the README until commit <code>26a53c0</code>, and that copy differed (it added "a custom one", and a planned preset list added <code>Snack</code>). As a Listist list it might be <span class="pin">org:diabeteshelper:logbook.activity@v1</span>.</p></div>
+      <div class="rule"><h3>Pin immutable versions</h3><p>The <code>Client</code> table stores only <code>activity TEXT</code> (<code>lib/database/database.dart:34</code>). It has no list id or version, so rows in old CSV exports can't be traced back to the list version they came from.</p></div>
+      <div class="rule"><h3>Values are identity</h3><p>The display label is the stored value. <code>DropDownField</code> writes the label it shows (<code>logbook.dart:290</code>, <code>:525</code>), and the export writes that label as is (<code>database.dart:51-59</code>).</p></div>
+      <div class="rule"><h3>Retire, never delete</h3><p>No value has been renamed or removed in code yet. The README's planned <code>Snack</code> preset was dropped along with the rest of the roadmap text (<code>26a53c0</code>). Nothing references it now.</p></div>
+      <div class="rule"><h3>People curate, agents read</h3><p>None found. There are no agents, prompts or LLM calls in the repository.</p></div>
+      <div class="rule"><h3>Never auto-upgrade a pin</h3><p>Nothing reads a list from a remote "latest". The food search calls Edamam's <code>food-database/v2</code> (<code>lib/pages/home.dart:50</code>). The API version is pinned in the URL path, but the response vocabulary (food <code>category</code>, nutrient codes) is not.</p></div>
+      <div class="rule"><h3>Look up raw strings</h3><p><code>strict: false</code> on both activity pickers (<code>logbook.dart:292</code>, <code>:527</code>) accepts any typed text with no normalisation. A lookup against the activity list would map "breakfast" or "brekkie" to one value.</p></div>
+      <div class="rule"><h3>Do not invent values</h3><p>The five activities are typed inline (<code>logbook.dart:107-109</code>), and the "custom" option is just free text. The nutrient key <code>CHOCDF</code> is typed inline in two places (<code>lib/models/foodmodel.dart:19</code>, <code>:33</code>).</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Numbers</h2>
+    <div class="stats">
+      <div class="stat"><b>5</b><span>distinct closed or implied lists (activity, measurement units, resource links, nutrient codes, food category)</span></div>
+      <div class="stat"><b>1</b><span>used in 3+ layers (activity: picker, storage, CSV export)</span></div>
+      <div class="stat"><b>1</b><span>with verified drift (activity: list vs free text)</span></div>
+      <div class="stat"><b>0</b><span>live bugs caused by drift (1 unrelated live bug found)</span></div>
+      <div class="stat"><b>0</b><span>rebuilt constraints. The database has no CHECK or enum and only one schema version (<code>version: 1</code>, <code>database.dart:30</code>)</span></div>
+    </div>
+    <p class="muted">I counted by concept, not by file. Of the 5 lists, two are implied rather than enumerated: units are stated only as "Carbs (g)", and the food category is an external value passed through. Navigation tabs and table column names are left out of the count (see "Where not to use Listist"). All counts are approximate.</p>
+  </section>
+
+  <section>
+    <h2>Live bugs from drift</h2>
+    <p>These are worth fixing whatever is decided about Listist.</p>
+    <div class="table-frame">
+      <table>
+        <thead><tr><th>What breaks</th><th>Copies that disagree</th><th>Effect</th><th>Verified</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip warn">Gap</span> Activity values fragment</td><td><code>lib/pages/logbook.dart:107</code> offers 5 fixed values; <code>logbook.dart:292</code> and <code>:527</code> set <code>strict: false</code>, which allows any text; <code>lib/database/database.dart:34</code> <code>activity TEXT</code> has no constraint; <code>lib/pages/add_editclient.dart:80</code> uses a plain free-text field (this screen is currently unreachable, because nothing constructs <code>AddEdit</code>)</td><td>The same activity can be stored with different spellings and case. Anyone grouping the exported CSV by activity gets split buckets. Nothing fails today.</td><td>yes</td></tr>
+          <tr><td><span class="chip warn">Gap</span> Nutrient value typed two ways</td><td><code>lib/models/foodmodel.dart:8</code> <code>double nutrient</code> from <code>CHOCDF</code>; <code>foodmodel.dart:28</code> <code>String CHOCDF</code> in an unused <code>nutrients</code> class</td><td>No effect now, because the class is unused. If someone reuses it, a numeric field will be decoded as a string.</td><td>yes</td></tr>
+          <tr><td><span class="chip bad">Bug</span> <em>Not drift, found incidentally:</em> logbook hides almost every entry</td><td><code>lib/pages/logbook.dart:261</code> calls <code>search("carbs", "2")</code>; <code>lib/database/database.dart:94</code> runs <code>where carbs = ?</code> with the value <code>"2"</code></td><td>The logbook list shows only entries whose carbs field is exactly <code>2</code>. Every other saved entry is still in the database and the CSV export, but doesn't appear in the list. The filter was added in <code>174ad48</code>.</td><td>yes (code read; not run on a device)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ranked candidates</h2>
+    <div class="table-frame">
+      <table>
+        <thead><tr><th>Rank</th><th>List</th><th>Class</th><th>Layers</th><th>Drift</th><th>Change rate</th><th>Consumers</th><th>Effort</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1</td><td>Logbook activity / entry type</td><td>product</td><td class="n">3</td><td class="n">2</td><td class="n">2</td><td class="n">1</td><td class="n">2</td><td class="n">10</td></tr>
+          <tr><td class="n">2</td><td>Measurement units (carbs, blood glucose, insulin)</td><td>reference</td><td class="n">1</td><td class="n">2</td><td class="n">1</td><td class="n">2</td><td class="n">2</td><td class="n">8</td></tr>
+          <tr><td class="n">3</td><td>Nutrient codes (<code>CHOCDF</code>)</td><td>reference (external API key)</td><td class="n">2</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n">3</td><td class="n">8</td></tr>
+          <tr><td class="n">4</td><td>Resource links</td><td>catalogue</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n">3</td><td class="n">7</td></tr>
+          <tr><td class="n">5</td><td>Food category (Edamam <code>category</code>)</td><td>reference (external)</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n">3</td><td class="n">7</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Scores run 1–3 on each axis, and Effort is inverse (3 = cheapest). Consumers is 1 for most lists because there is one app and no server. Units score 2 because the CSV export and any clinician reading it depend on them. Change rate comes from <code>git log -S</code>: "Breakfast" appears in 4 commits and "Cycling" in 3, most of them README edits. Every other list was touched once.</p>
+    <div class="opps">
+      <div class="opp">
+        <div class="opp-head"><h3>1. Logbook activity / entry type</h3><span class="chip accent">product vocabulary</span></div>
+        <div class="grid2">
+          <div><span class="label">Copies</span><p>Code: <code>lib/pages/logbook.dart:107-109</code> (<code>activit</code>), used by the pickers at <code>:290</code> and <code>:525</code>. Storage: <code>lib/database/database.dart:34</code>, <code>lib/models/logbookmodel.dart</code> <code>toMap</code>/<code>fromMap</code>. Export: <code>database.dart:51-59</code> (CSV). Unused free-text form: <code>lib/pages/add_editclient.dart:80</code>. Docs: README until <code>26a53c0</code>.</p></div>
+          <div><span class="label">Drift</span><p>The list has 5 values, but every write path accepts arbitrary text (verified). The old README said "options like Breakfast, Lunch, Dinner, Walking, Cycling and a custom one", and planned presets "Breakfast, Lunch, Dinner, Snack". <code>Snack</code> was never added to code (verified in history). Meals and exercise share one field.</p></div>
+          <div><span class="label">What Listist changes</span><p>The values would live in one place with stable ids (for example <code>breakfast</code>), separate from locale labels. Stored rows and exports would carry <code>listId@version</code>. Typed text would be resolved with the lookup endpoint instead of being stored raw. Values would be retired, not removed, if the meal/exercise split changes.</p></div>
+          <div><span class="label">Existing public list</span><p>Not checked. The Listist search calls were blocked in this session (see Method and caveats).</p></div>
+          <div><span class="label">Proposed id</span><p><span class="pin">org:diabeteshelper:logbook.activity</span></p></div>
+          <div><span class="label">Rough cost</span><p>Small to medium. Existing rows store labels or free text, so the history would need a one-time mapping. The app has no server to cache a pinned list, so it would ship a bundled fallback.</p></div>
+        </div>
+      </div>
+      <div class="opp">
+        <div class="opp-head"><h3>2. Measurement units</h3><span class="chip accent">reference data</span></div>
+        <div class="grid2">
+          <div><span class="label">Copies</span><p>"Carbs (g)" is a column heading (<code>logbook.dart:203</code>). Per-100&nbsp;g arithmetic is in <code>lib/fooddetail.dart:46</code>. "BG level" (<code>logbook.dart:213</code>) and "Insulin" (<code>:233</code>) have no unit. The <code>bg</code>, <code>insulin</code> and <code>carbs</code> columns are all <code>TEXT</code> (<code>database.dart:35-37</code>).</p></div>
+          <div><span class="label">Drift</span><p>The data is free text in a place where a closed list exists in the real world: blood glucose is recorded in either mmol/L or mg/dL, and the app records neither. This is a gap, not a copy disagreement.</p></div>
+          <div><span class="label">What Listist changes</span><p>A pinned unit list would give each stored reading an explicit unit value, so exports become unambiguous.</p></div>
+          <div><span class="label">Existing public list</span><p>Not checked (blocked). A public units list (for example a UCUM subset) is worth checking before anyone proposes a new one.</p></div>
+          <div><span class="label">Proposed id</span><p><span class="pin">public units list, if one exists; else org:diabeteshelper:units.glucose</span></p></div>
+          <div><span class="label">Rough cost</span><p>Medium. Adds a stored field per reading, and existing readings have an unknown unit.</p></div>
+        </div>
+      </div>
+      <div class="opp">
+        <div class="opp-head"><h3>3. Nutrient codes</h3><span class="chip accent">reference data</span></div>
+        <div class="grid2">
+          <div><span class="label">Copies</span><p><code>lib/models/foodmodel.dart:19</code> and <code>:33</code> (<code>"CHOCDF"</code>, carbohydrate by difference, from Edamam's nutrient keys).</p></div>
+          <div><span class="label">Drift</span><p>Typed as <code>double</code> in one class and <code>String</code> in the other (verified, gap).</p></div>
+          <div><span class="label">What Listist changes</span><p>Little. The key belongs to Edamam's API contract, and the app reads one nutrient. A list only becomes useful if more nutrients are shown or a second provider is added.</p></div>
+          <div><span class="label">Existing public list</span><p>Not checked (blocked).</p></div>
+          <div><span class="label">Proposed id</span><p><span class="pin">none proposed (weak fit)</span></p></div>
+          <div><span class="label">Rough cost</span><p>Low, but there is little to gain.</p></div>
+        </div>
+      </div>
+      <div class="opp">
+        <div class="opp-head"><h3>4. Resource links</h3><span class="chip accent">catalogue the product ships</span></div>
+        <div class="grid2">
+          <div><span class="label">Copies</span><p>Four cards in <code>lib/pages/respage.dart:142-249</code>: NHS diabetes, a diabetes.co.uk forum, the Diabetes UK forum and Diabetes UK symptoms. Three section cards in <code>lib/pages/urusole.dart:38-122</code>.</p></div>
+          <div><span class="label">Drift</span><p>None. There is one copy. The entries have no ids, so they are identified by title and URL only.</p></div>
+          <div><span class="label">What Listist changes</span><p>Links could be updated or retired (with <code>replacedBy</code>) without an app release, if links were read from a pinned list. Today they are compiled in.</p></div>
+          <div><span class="label">Existing public list</span><p>Not checked (blocked).</p></div>
+          <div><span class="label">Proposed id</span><p><span class="pin">org:diabeteshelper:resources.links</span></p></div>
+          <div><span class="label">Rough cost</span><p>Low code cost, but it adds a network dependency to a page that is static today.</p></div>
+        </div>
+      </div>
+      <div class="opp">
+        <div class="opp-head"><h3>5. Food category</h3><span class="chip accent">reference data (external)</span></div>
+        <div class="grid2">
+          <div><span class="label">Copies</span><p>Edamam's <code>category</code> is read into a field named <code>source</code> (<code>lib/models/foodmodel.dart:17</code>), passed as <code>desc</code> (<code>lib/pages/home.dart:215</code>) and displayed raw (<code>home.dart:344</code>).</p></div>
+          <div><span class="label">Drift</span><p>Naming only: the same concept is called <code>category</code>, then <code>source</code>, then <code>desc</code>. No values are enumerated or stored.</p></div>
+          <div><span class="label">What Listist changes</span><p>Nothing today. It would matter only if the app started filtering or storing by category.</p></div>
+          <div><span class="label">Existing public list</span><p>Not checked (blocked).</p></div>
+          <div><span class="label">Proposed id</span><p><span class="pin">none proposed</span></p></div>
+          <div><span class="label">Rough cost</span><p>Not applicable.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Catalogue identity</h2>
+    <div class="table-frame">
+      <table>
+        <thead><tr><th>Catalogue</th><th>Stable ids</th><th>Version</th><th>Old versions resolvable</th><th>Retirement</th><th>Stored references pin a version</th></tr></thead>
+        <tbody>
+          <tr><td>Logbook activity</td><td>no (label is the value)</td><td>no</td><td>no</td><td>no</td><td>no: <code>Client.activity</code> holds bare text</td></tr>
+          <tr><td>Resource links</td><td>no (title + URL)</td><td>no</td><td>no</td><td>no</td><td>not stored</td></tr>
+          <tr><td>Nutrient codes (Edamam)</td><td>yes (<code>CHOCDF</code> is a stable provider key)</td><td>partly: API path is <code>v2</code></td><td>provider-dependent</td><td>unknown</td><td>not stored</td></tr>
+          <tr><td>Food category (Edamam)</td><td>provider values, not inspected</td><td>partly: API path is <code>v2</code></td><td>provider-dependent</td><td>unknown</td><td>not stored</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">I found no ledger and no "retire, don't delete" pattern. The one thing to build on: the Edamam call pins its API version in the path (<code>home.dart:50</code>). <span class="chip good">Strength</span></p>
+  </section>
+
+  <section>
+    <h2>Ad hoc lookups</h2>
+    <div class="table-frame">
+      <table>
+        <thead><tr><th>Where</th><th>What it maps</th><th>Replace with the lookup?</th></tr></thead>
+        <tbody>
+          <tr><td><code>lib/pages/logbook.dart:292</code>, <code>:527</code></td><td>Typed activity text. It is stored as is, with no mapping at all (<code>strict: false</code>).</td><td>yes. This is where a lookup belongs, although no mapper exists yet.</td></tr>
+          <tr><td><code>lib/database/database.dart:84-100</code></td><td><code>search(column, value)</code> does an exact match on a caller-supplied column and value.</td><td>no. It is record filtering, not vocabulary mapping.</td></tr>
+          <tr><td><code>lib/models/foodmodel.dart:13-20</code></td><td>Maps Edamam JSON keys to model fields.</td><td>no. It decodes an API response, not raw text.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">No hand-written normaliser, alias table or label matcher exists. The finding is the absence of one where free text meets a list.</p>
+  </section>
+
+  <section>
+    <h2>Agents and prompts</h2>
+    <p>None found. The repository has no LLM calls, prompt templates, tool definitions or agent configuration. The only AI-adjacent plan was in the old README: a preset-based insulin calculator ("select their preset … enter their carb intake, the system will output how many units they need"), removed in <code>26a53c0</code>. If that feature returns, the preset list it uses would need validated, stable values, and the activity list would be the natural source.</p>
+  </section>
+
+  <section>
+    <h2>Where not to use Listist</h2>
+    <ul class="plain">
+      <li>The log entries themselves (<code>Client</code> rows: carbs, BG, insulin, notes, datetime). These are a person's own health records, not a vocabulary.</li>
+      <li>The log field names (<code>activity</code>, <code>insulin</code>, <code>carbs</code>, <code>bg</code>, <code>datetime</code>, <code>notes</code>), repeated across <code>database.dart:33-39</code>, <code>logbookmodel.dart</code> and the column headings at <code>logbook.dart:203-244</code>. This is schema, even though the labels drift ("bg" / <code>bglocouse</code> / "BG level").</li>
+      <li>Food search results from Edamam (<code>home.dart:72</code>). These are rows from an external search, not options.</li>
+      <li>Bottom navigation tabs ("Search", "Resources", "Log book" in <code>lib/main.dart</code>). These are UI routes.</li>
+      <li>Ad unit identifiers in <code>home.dart</code> and <code>respage.dart</code>. These are configuration, not vocabulary.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Decisions needed</h2>
+    <ul class="plain">
+      <li>Fix the logbook filter (<code>search("carbs", "2")</code>, <code>logbook.dart:261</code>) now, separately from any Listist work?</li>
+      <li>Is "activity" one list or two (meal vs exercise)? Should <code>Snack</code> and a deliberate "Other" value be added, and should free text still be allowed?</li>
+      <li>Which blood-glucose unit does the app mean, and should each reading store its unit?</li>
+      <li>Is a single offline app worth a network-backed list at all, or is the activity list enough as a pinned, bundled copy?</li>
+      <li>Security, outside Listist: the food-API credentials are hard-coded in source (<code>lib/pages/home.dart:50</code> and <code>:61</code>; values redacted here), although the README says users must supply their own. Should they be revoked and moved out of the repository?</li>
+      <li>Should the Listist catalogue search (step 9) be run with permission, so the reference-data cards can name existing public lists?</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div><strong>Method and caveats.</strong> I scanned commit <code>16173e1</code> (branch <code>claude/listist-candidate-scan-hpa0o9</code>). I read every file under <code>lib/</code> and ran the skill's grep patterns by layer: enums and constants, label maps and pickers, SQL and schema, API contracts, config, exports, imports, seeds and tests, docs, agents. I used <code>git log -S</code> for change rate. There are no API specs, migrations, i18n catalogues, tests, seeds or Android sources in the repository. The <code>.dart_tool/</code> build outputs are committed but are generated, so I ignored them. The Listist skill and handbook (<code>/api/v1/begin</code>) were fetched live on 2026-10-06, and the handbook matched the skill's summary. <strong>Step 9 was not done:</strong> the read-only Listist <code>/search</code> and <code>/lists?tag=</code> queries were blocked by this session's permission policy, so every "existing public list" entry reads "not checked". All drift claims above were verified by opening both copies. The incidental bug was verified by reading the code, not by running the app. Credentials and personal details found in the repository and its build files are not quoted. No code was changed, and this report was not uploaded or sent anywhere.</div>
+  </footer>
+
+</div>
+</body>
+</html>
